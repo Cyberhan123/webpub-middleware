@@ -9,7 +9,6 @@ package cn.hselfweb.webpub.webpubmiddleware.proxy;
 import cn.hselfweb.webpub.webpubmiddleware.type.SiteInfo;
 import cn.hselfweb.webpub.webpubmiddleware.utils.StaticData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
