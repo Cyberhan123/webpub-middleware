@@ -4,13 +4,9 @@
  * 本人有权对开源协议进行修改和更换。
  */
 
-package cn.hselfweb.webpub.webpubmiddleware.db;
+package cn.hselfweb.webpub.webpubmiddleware.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/**
- * 数据库User表查询接口暴露
- */
-public interface UserRepository extends JpaRepository<User, Long> {
-    User save(User user);
+public interface ConfigRepository extends JpaRepository {
 }
