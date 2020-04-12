@@ -6,8 +6,34 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.services;
 
+import cn.hselfweb.webpub.webpubmiddleware.proxy.FtpProxy;
+import cn.hselfweb.webpub.webpubmiddleware.type.CreateFtpParam;
+import cn.hselfweb.webpub.webpubmiddleware.type.CreateSiteParam;
+import cn.hselfweb.webpub.webpubmiddleware.type.DeleteFtpParam;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
 /**
  * FTP控制业务层
  */
+@Service
 public class FTPService {
+    private FtpProxy ftpProxy;
+
+    @Autowired
+    FTPService(FtpProxy ftpProxy) {
+        this.ftpProxy = ftpProxy;
+    }
+
+    //创建Ftp
+    public ResponseEntity<String> createFtp(CreateFtpParam createFtpParam) {
+        return this.ftpProxy.createFtp(createFtpParam);
+    }
+
+    //删除Ftp
+    public ResponseEntity<String> deleteFtp(DeleteFtpParam deleteFtpParam) {
+        return this.ftpProxy.deleteFtp(deleteFtpParam);
+    }
+
 }

@@ -4,20 +4,22 @@
  * 本人有权对开源协议进行修改和更换。
  */
 
-package cn.hselfweb.webpub.webpubmiddleware.type;
+package cn.hselfweb.webpub.webpubmiddleware.security;
 
 import lombok.Data;
 
-/**
- * 首页列表类型
- */
 @Data
-public class NavItem {
-    public String name;
-    public String link;
+public class Role {
 
-    public NavItem(String name, String link) {
+    private Integer id;
+    private String name;
+
+
+    public Role(){
+
+    }
+
+    public Role(String name) {
         this.name = name;
-        this.link = link;
     }
 }

@@ -6,7 +6,9 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.repository;
 
+import cn.hselfweb.webpub.webpubmiddleware.db.UsersEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UsersRepository extends JpaRepository {
+public interface UsersRepository extends JpaRepository<UsersEntity, Integer> {
+    UsersEntity findUsersEntityByUsername(String Username);
 }

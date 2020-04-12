@@ -6,7 +6,8 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.repository;
 
+import cn.hselfweb.webpub.webpubmiddleware.db.CrontabEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CrontabRepository extends JpaRepository {
+public interface CrontabRepository extends JpaRepository<CrontabEntity, Integer> {
 }

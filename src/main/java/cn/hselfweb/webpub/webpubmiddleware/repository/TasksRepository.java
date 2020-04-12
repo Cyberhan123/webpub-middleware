@@ -6,7 +6,8 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.repository;
 
+import cn.hselfweb.webpub.webpubmiddleware.db.TasksEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TasksRepository extends JpaRepository {
+public interface TasksRepository extends JpaRepository<TasksEntity, Integer> {
 }

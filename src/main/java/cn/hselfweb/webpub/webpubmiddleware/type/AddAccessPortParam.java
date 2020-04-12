@@ -8,16 +8,9 @@ package cn.hselfweb.webpub.webpubmiddleware.type;
 
 import lombok.Data;
 
-/**
- * 首页列表类型
- */
 @Data
-public class NavItem {
-    public String name;
-    public String link;
-
-    public NavItem(String name, String link) {
-        this.name = name;
-        this.link = link;
-    }
+public class AddAccessPortParam {
+    private String port; //端口或者ip地址
+    private String type; //port 放行端口 address 屏蔽ip
+    private String ps;//备注
 }

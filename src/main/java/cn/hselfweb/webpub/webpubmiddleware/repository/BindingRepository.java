@@ -6,7 +6,8 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.repository;
 
+import cn.hselfweb.webpub.webpubmiddleware.db.BindingEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BindingRepository extends JpaRepository {
+public interface BindingRepository extends JpaRepository<BindingEntity, Integer> {
 }

@@ -4,9 +4,8 @@
  * 本人有权对开源协议进行修改和更换。
  */
 
-package cn.hselfweb.webpub.webpubmiddleware.services;
+package cn.hselfweb.webpub.webpubmiddleware.proxy;
 
-import cn.hselfweb.webpub.webpubmiddleware.proxy.DBProxy;
 import cn.hselfweb.webpub.webpubmiddleware.type.CreateDbParam;
 import cn.hselfweb.webpub.webpubmiddleware.type.CreateFtpParam;
 import cn.hselfweb.webpub.webpubmiddleware.type.DeleteDbParam;
@@ -15,26 +14,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
-/**
- * 数据库业务层
- */
 @Service
-public class DBService {
-    private DBProxy dbProxy;
+public class DBProxy {
+    private RestTemplate restTemplate;
 
     @Autowired
-    DBService(DBProxy dbProxy) {
-        this.dbProxy = dbProxy;
+    DBProxy(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
     }
 
     public ResponseEntity<String> createDb(CreateDbParam createDbParam) {
-        return this.dbProxy.createDb(createDbParam);
+        String url = StaticData.BASE_URl + "/database?action=AddDatabase";
+        return restTemplate.exchange(url, HttpMethod.POST, StaticData.Get_Enitity_withBody(createDbParam), String.class);
     }
 
     public ResponseEntity<String> deleteDb(DeleteDbParam deleteDbParam) {
-        return this.dbProxy.deleteDb(deleteDbParam);
+        String url = StaticData.BASE_URl + "/database?action=DeleteDatabase";
+        return restTemplate.exchange(url, HttpMethod.POST, StaticData.Get_Enitity_withBody(deleteDbParam), String.class);
     }
-
 
 }

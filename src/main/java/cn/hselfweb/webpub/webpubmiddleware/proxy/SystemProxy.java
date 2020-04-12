@@ -25,8 +25,23 @@ public class SystemProxy {
         this.restTemplate = restTemplate;
     }
 
-    public ResponseEntity<String> GetSystemTotal() {
+    //获取系统基础统计
+    public ResponseEntity<String> getSystemTotal() {
         String url = StaticData.BASE_URl + "/system?action=GetSystemTotal";
         return restTemplate.exchange(url, HttpMethod.POST, StaticData.Get_Entity(), String.class);
     }
+
+    //获取磁盘分区信息
+    public ResponseEntity<String> getDiskInfo() {
+        String url = StaticData.BASE_URl + "/system?action=GetDiskInfo";
+        return restTemplate.exchange(url, HttpMethod.POST, StaticData.Get_Entity(), String.class);
+    }
+
+    //获取实时状态信息(CPU、内存、网络、负载)
+    public ResponseEntity<String> getNetWork() {
+        String url = StaticData.BASE_URl + "/system?action=GetNetWork";
+        return restTemplate.exchange(url, HttpMethod.POST, StaticData.Get_Entity(), String.class);
+    }
+
+
 }

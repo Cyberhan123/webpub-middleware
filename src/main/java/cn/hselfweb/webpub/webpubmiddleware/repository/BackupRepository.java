@@ -6,8 +6,10 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.repository;
 
+import cn.hselfweb.webpub.webpubmiddleware.db.BackupEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BackupRepository extends JpaRepository {
+
+public interface BackupRepository extends JpaRepository<BackupEntity, Integer> {
 
 }

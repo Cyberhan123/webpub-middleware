@@ -6,7 +6,8 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.repository;
 
+import cn.hselfweb.webpub.webpubmiddleware.db.FtpsEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface FtpsRepository extends JpaRepository {
+public interface FtpsRepository extends JpaRepository<FtpsEntity, Integer> {
 }

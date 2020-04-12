@@ -6,7 +6,7 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.proxy;
 
-import cn.hselfweb.webpub.webpubmiddleware.type.SshInfo;
+import cn.hselfweb.webpub.webpubmiddleware.type.AddAccessPortParam;
 import cn.hselfweb.webpub.webpubmiddleware.utils.StaticData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
@@ -27,8 +27,18 @@ public class FireWallProxy {
         this.restTemplate = restTemplate;
     }
 
-    public ResponseEntity<String> GetSshInfo(){
+    public ResponseEntity<String> getSshInfo() {
         String url = StaticData.BASE_URl + "/firewall?action=GetSshInfo";
         return restTemplate.exchange(url, HttpMethod.POST, StaticData.Get_Entity(), String.class);
+    }
+
+    public ResponseEntity<String> addAccessPort(AddAccessPortParam addAccessPortParam) {
+        String url = StaticData.BASE_URl + "/firewall?action=AddAcceptPort";
+        return restTemplate.exchange(url, HttpMethod.POST, StaticData.Get_Enitity_withBody(addAccessPortParam), String.class);
+    }
+
+    public ResponseEntity<String> setSshPort(String Port) {
+        String url = StaticData.BASE_URl + "/firewall?action=SetSshPort";
+        return restTemplate.exchange(url, HttpMethod.POST, StaticData.Get_Enitity_withBody(Port), String.class);
     }
 }

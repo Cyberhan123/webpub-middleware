@@ -27,11 +27,10 @@ public class WatchController {
 
     /**
      * 系统监控统计
-     * @return Json
+     * @return R
      */
     @RequestMapping(value = "/total", method = RequestMethod.GET)
-    public @ResponseBody
-    String total() {
-        return systemProxy.GetSystemTotal().toString();
+    public @ResponseBody String total() {
+        return null;
     }
 }

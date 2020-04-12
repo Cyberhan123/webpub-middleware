@@ -5,12 +5,12 @@
  */
 package cn.hselfweb.webpub.webpubmiddleware;
 
+import org.minbox.framework.api.boot.autoconfigure.swagger.annotation.EnableApiBootSwagger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableSwagger2
+@EnableApiBootSwagger
 public class WebpubMiddlewareApplication {
 
     public static void main(String[] args) {

@@ -6,7 +6,8 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.repository;
 
+import cn.hselfweb.webpub.webpubmiddleware.db.SitesEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface SitesRepository extends JpaRepository {
+public interface SitesRepository extends JpaRepository<SitesEntity, Integer> {
 }

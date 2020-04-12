@@ -6,7 +6,9 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.repository;
 
+import cn.hselfweb.webpub.webpubmiddleware.db.ConfigEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ConfigRepository extends JpaRepository {
+
+public interface ConfigRepository extends JpaRepository<ConfigEntity, Integer> {
 }

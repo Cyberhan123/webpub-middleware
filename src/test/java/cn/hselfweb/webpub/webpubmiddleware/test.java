@@ -6,8 +6,11 @@
 package cn.hselfweb.webpub.webpubmiddleware;
 
 import cn.hselfweb.webpub.webpubmiddleware.proxy.SystemProxy;
+import cn.hselfweb.webpub.webpubmiddleware.services.SiteService;
+import cn.hselfweb.webpub.webpubmiddleware.type.SiteListParam;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -16,8 +19,9 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+@SpringBootTest
 public class test {
-    @Test
+
     public void GetSystemTotal() {
         RestTemplate restTemplate = new RestTemplate();
         String url = "http://127.0.0.1:8888/system?action=GetSystemTotal";
@@ -29,10 +33,15 @@ public class test {
         ResponseEntity<String> response = restTemplate.postForEntity(url, request, String.class);
         System.out.println(response.getBody());
     }
+
     @Autowired
-    SystemProxy systemProxy;
+    SiteService siteService;
+
     @Test
-    public void RunTest() {
-        systemProxy.GetSystemTotal();
+    public void testSite() {
+        SiteListParam siteListParam = new SiteListParam();
+        System.out.print(siteListParam);
+        siteListParam.setLimit(15);
+        siteService.getList(siteListParam);
     }
 }

@@ -6,9 +6,12 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.type;
 
+import lombok.Data;
+
 /**
  * 通用数据传输
  */
+@Data
 public class CommonForm {
     //当前分页 [可选]
     public String p;
@@ -22,4 +25,7 @@ public class CommonForm {
     public String tojs;
     //搜索内容 [可选]
     public String search;
+    // databases 对应数据库
+    public String table;
+
 }

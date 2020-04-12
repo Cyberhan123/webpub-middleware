@@ -7,17 +7,11 @@
 package cn.hselfweb.webpub.webpubmiddleware.type;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-/**
- * 首页列表类型
- */
 @Data
-public class NavItem {
-    public String name;
-    public String link;
-
-    public NavItem(String name, String link) {
-        this.name = name;
-        this.link = link;
-    }
+public class DeleteFtpParam {
+    private  int id; //Ftp id【必填】
+    private String username;//用户名【必填】
 }

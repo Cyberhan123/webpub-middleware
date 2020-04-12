@@ -6,7 +6,8 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.repository;
 
+import cn.hselfweb.webpub.webpubmiddleware.db.LogsEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface LogsRepository extends JpaRepository {
+public interface LogsRepository extends JpaRepository<LogsEntity, Integer> {
 }

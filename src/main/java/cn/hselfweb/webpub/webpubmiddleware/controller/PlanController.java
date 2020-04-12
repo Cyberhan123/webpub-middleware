@@ -14,4 +14,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/v1/api/plan")
 @ApiModel(value="计划类",description="对应前端计划" )
 public class PlanController {
+
 }

@@ -6,18 +6,8 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.type;
 
-import lombok.Data;
+public class SiteDescParam {
+    private int id;  //网站 ID [必传]
+    private String ps;// 测试 备注内容[必传]
 
-/**
- * 首页列表类型
- */
-@Data
-public class NavItem {
-    public String name;
-    public String link;
-
-    public NavItem(String name, String link) {
-        this.name = name;
-        this.link = link;
-    }
 }

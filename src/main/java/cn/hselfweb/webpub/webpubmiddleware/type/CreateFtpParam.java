@@ -6,5 +6,14 @@
 
 package cn.hselfweb.webpub.webpubmiddleware.type;
 
-public class SshInfo {
+import lombok.Data;
+
+
+@Data
+public class CreateFtpParam {
+
+    private String ftp_username; //ftp用户名【必填】
+    private String ftp_password; //ftp密码 【必填】
+    private String path;//ftp 路径【必填】
+    private String ps;//对当前ftp用户描述【可选】
 }
