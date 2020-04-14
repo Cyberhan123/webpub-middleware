@@ -21,7 +21,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.requestMatchers().antMatchers(HttpMethod.OPTIONS, "/oauth/**")
+        //这里必须处理所有预请求
+        http.requestMatchers().antMatchers(HttpMethod.OPTIONS, "/**")
                 .and()
                 .cors()
                 .and()
