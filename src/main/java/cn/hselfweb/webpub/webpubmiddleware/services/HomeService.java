@@ -27,13 +27,13 @@ public class HomeService {
      * @return
      */
     public ArrayList<NavItem> setNavList() {
-        NavItem home = new NavItem("首页", "/hone");
-        NavItem site = new NavItem("网站", "/website/index");
-        NavItem ftp = new NavItem("FTP", "/ftp/index");
-        NavItem db = new NavItem("数据库", "/db/index");
-        NavItem watch = new NavItem("监控", "/watch/index");
-        NavItem safe = new NavItem("安全", "/safe/index");
-        NavItem plan = new NavItem("计划任务", "/plan/index");
+        NavItem home = new NavItem("首页", "/");
+        NavItem site = new NavItem("网站", "/website");
+        NavItem ftp = new NavItem("FTP", "/ftp");
+        NavItem db = new NavItem("数据库", "/db/");
+        NavItem watch = new NavItem("监控", "/watch");
+        NavItem safe = new NavItem("安全", "/safe");
+        NavItem plan = new NavItem("计划任务", "/plan");
         ArrayList<NavItem> navItems = Lists.newArrayList(home, site, ftp, db, watch, safe, plan);
         return navItems;
     }
